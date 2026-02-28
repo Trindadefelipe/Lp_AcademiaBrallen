@@ -190,4 +190,159 @@ body {
     .beneficios-grid {
         grid-template-columns: 1fr; /* Passa a ter apenas 1 coluna, empilhando os cartões */
     }
+
+}
+
+/* --- 4. SESSÃO MODALIDADES --- */
+.modalidades {
+    background-color: #000;
+    padding: 100px 0;
+}
+
+/* ⚠️ AQUI ESTÁ A CORREÇÃO DO SEU PRINT: Desliga o flexbox herdado do topo */
+.modalidades .container {
+    display: block; 
+    text-align: center; 
+}
+
+.modalidades h2 {
+    font-size: 36px;
+    color: #fff;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.modalidades p {
+    color: #ccc;
+    font-size: 18px;
+    margin-bottom: 60px;
+}
+
+/* O Grid de Modalidades */
+.modalidades-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* O Card de Modalidade */
+.modalidade-card {
+    background-color: #111;
+    border: 1px solid #222;
+    border-radius: 8px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.modalidade-card:hover {
+    border-color: #d4af37;
+    transform: translateY(-5px);
+}
+
+.modalidade-card img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+    display: block;
+}
+
+.modalidade-card h3 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.modalidade-card p {
+    color: #999;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* A caixa do seu botão */
+.cta-modalidades {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Responsividade do Grid */
+@media (max-width: 1024px) {
+    .modalidades-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .modalidades-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* SESSÃO PROFESSOR*/
+.professor {
+    background-color: #0a0a0a;
+    padding: 100px 0;
+}
+
+/* Desliga o flexbox do topo para o título poder ficar centralizado sozinho na linha */
+.professor .container {
+    display: block; 
+}
+
+/* Estilo do título que agora está no topo */
+.professor h2 {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    margin-bottom: 60px; /* Dá um espaço legal antes de começar a foto e o texto */
+    text-transform: uppercase;
+}
+
+/* O Flexbox que cuida apenas da foto e do texto lado a lado */
+.professor-conteudo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.professor-img {
+    flex: 1;
+}
+
+.professor-img img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: -15px 15px 0px #d4af37;
+    display: block;
+    margin: 0 auto; /* Ajuda a centralizar a imagem dentro do espaço dela */
+}
+
+.professor-texto {
+    flex: 1;
+    text-align: left; /* Mantém o texto alinhado à esquerda no PC para boa leitura */
+}
+
+.professor-texto p {
+    font-size: 18px;
+    color: #ccc;
+    line-height: 1.8;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+    .professor-conteudo {
+        flex-direction: column;
+        gap: 50px;
+    }
+    
+    .professor-texto {
+        text-align: center; /* No celular, o texto centralizado fica mais bonito */
+    }
+    
+    .professor-img img {
+        box-shadow: 0px 10px 0px #d4af37;
+    }
 }
