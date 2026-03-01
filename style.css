@@ -30,7 +30,7 @@ body {
     border-bottom: 1px solid #333;
 }
 .navbar .logo img {
-    height: 50px;
+    height: 180px;
 }
 .navbar .menu ul {
     list-style: none;
@@ -65,7 +65,7 @@ body {
 .hero {
     height: 100vh; /* Ocupa a altura inteira da tela */
     /* Imagem de fundo com overlay escuro */
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('img/istockphoto-155282610-1024x1024.jpg') no-repeat center center/cover;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('img/jiu-particular.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -225,14 +225,15 @@ body {
     gap: 30px;
 }
 
-/* O Card de Modalidade */
+/* O Cartão de Modalidade Atualizado */
 .modalidade-card {
     background-color: #111;
     border: 1px solid #222;
     border-radius: 8px;
-    padding: 40px 30px;
+    overflow: hidden; /* MÁGICA: Isso faz a imagem respeitar as bordas arredondadas do cartão */
     text-align: center;
     transition: all 0.3s ease;
+    /* Removemos o padding daqui, ele vai para a caixa de texto agora */
 }
 
 .modalidade-card:hover {
@@ -240,21 +241,28 @@ body {
     transform: translateY(-5px);
 }
 
+/* A Foto GIGANTE e Profissional */
 .modalidade-card img {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    margin: 0 auto 20px;
+    width: 100%; /* Ocupa toda a largura do cartão */
+    height: 220px; /* Uma altura imponente */
+    object-fit: cover; /* Cobre o espaço perfeitamente sem distorcer a foto */
     display: block;
+    margin: 0; /* Tira as margens que tínhamos no ícone */
+    /* Removemos aquele filter: invert(1) para a foto não ficar com cores zumbis! */
 }
 
-.modalidade-card h3 {
+/* O Espaçamento do Texto */
+.modalidade-conteudo {
+    padding: 30px; /* Devolvemos o respiro apenas para a parte do texto */
+}
+
+.modalidade-conteudo h3 {
     color: #fff;
     font-size: 20px;
     margin-bottom: 15px;
 }
 
-.modalidade-card p {
+.modalidade-conteudo p {
     color: #999;
     font-size: 15px;
     line-height: 1.6;
@@ -544,10 +552,17 @@ body {
     border-top: 1px solid #222; /* Uma linha sutil separando a localização do rodapé */
 }
 
+.rodape .container {
+    display: block;
+}
+
+
 .rodape p {
     color: #666; /* Um cinza mais escuro para não chamar muita atenção */
     font-size: 14px;
 }
+
+
 
 /* --- RESPONSIVIDADE (Celulares e Tablets) --- */
 @media (max-width: 900px) {
