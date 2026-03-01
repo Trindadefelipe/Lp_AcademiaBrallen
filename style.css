@@ -64,7 +64,6 @@ body {
 /*HERO SECTION*/
 .hero {
     height: 100vh;
-    /* Imagem de fundo com overlay escuro */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('img/jiu-particular.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
@@ -73,23 +72,57 @@ body {
     padding-top: 80px;
 }
 .hero-content {
+    display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
     max-width: 800px;
+    padding: 0 20px;
+}
+.hero-eyebrow {
+    color: #d4af37;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
 }
 .hero h1 {
-    font-size: 48px;
+    font-size: 54px;
     font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 20px;
+    line-height: 1.1;
+    margin-bottom: 25px;
     letter-spacing: -1px;
+    color: #fff;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
 }
 .hero p {
-    font-size: 18px;
-    color: #ccc;
-    margin-bottom: 40px;
-    font-weight: 400;
+    font-size: 20px;
+    color: #e0e0e0;
     line-height: 1.6;
+    margin-bottom: 20px;
+    font-weight: 400;
+    max-width: 600px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+.hero-local {
+    font-size: 16px;
+    color: #ccc;
+    font-weight: 300;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 38px;
+    }
+    .hero p {
+        font-size: 16px;
+    }
+    .hero-eyebrow {
+        font-size: 14px;
+    }
 }
 .btn-gold {
     text-decoration: none;
@@ -501,19 +534,17 @@ body {
     
     header .container {
         display: flex;
-        justify-content: center;
+        justify-content: center; 
         padding: 15px 0;
     }
-    
-    header nav {
-        display: none;
+    header nav,
+    header .btn-gold { 
+        display: none; 
     }
-    
     .logo img {
-        width: 180px;
+        width: 180px; 
         margin: 0; 
     }
-
     .cta-modalidades .btn-gold {
         display: block; 
         width: 90%; 
