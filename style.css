@@ -61,16 +61,16 @@ body {
     background-color: #d4af37;
     color: #000;
 }
-/* 2. HERO SECTION (ESTILOS)*/
+/*HERO SECTION*/
 .hero {
-    height: 100vh; /* Ocupa a altura inteira da tela */
+    height: 100vh;
     /* Imagem de fundo com overlay escuro */
     background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('img/jiu-particular.jpg') no-repeat center center/cover;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 80px; /* Desconto da altura da navbar fixa */
+    padding-top: 80px;
 }
 .hero-content {
     flex-direction: column;
@@ -91,7 +91,6 @@ body {
     font-weight: 400;
     line-height: 1.6;
 }
-/* Botão Dourado Principal */
 .btn-gold {
     text-decoration: none;
     background-color: #d4af37;
@@ -145,32 +144,31 @@ body {
     font-size: 36px;
     color: #fff;
     margin-bottom: 50px;
-    text-transform: uppercase; /* Deixa tudo em maiúsculo*/
+    text-transform: uppercase;
 }
 .beneficios-grid {
     display: grid;
-    /* Aqui dizemos: repita 3 vezes uma coluna que ocupa 1 fração (1fr) do espaço disponível */
     grid-template-columns: repeat(3, 1fr); 
-    gap: 30px; /* Cria um corredor entre os cartões */
+    gap: 30px;
 }
 .card {
     background-color: #111;
     border: 1px solid #333;
     border-radius: 8px;
-    overflow: hidden; /*Corta as pontas quadradas da imagem para respeitar o border-radius do card */
+    overflow: hidden;
     transition: all 0.3s ease;
 }
 .card img {
     width: 100%;
     height: 220px;
-    object-fit: cover; /* Garante que a imagem não fique espremida ou esticada */
+    object-fit: cover;
     display: block;
 }
 .card-content {
     padding: 30px;
 }
 .card:hover {
-    transform: translateY(-10px); /* O cartão flutua um pouco para cima */
+    transform: translateY(-10px);
     border-color: #d4af37;
     box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
 }
@@ -183,98 +181,76 @@ body {
 .card p {
     color: #ccc;
     font-size: 16px;
-    line-height: 1.6; /* Aumenta o espaço entre as linhas*/
+    line-height: 1.6;
 }
-/*RESPONSIVIDADE (Celulares)*/
 @media (max-width: 768px) {
     .beneficios-grid {
-        grid-template-columns: 1fr; /* Passa a ter apenas 1 coluna, empilhando os cartões */
+        grid-template-columns: 1fr;
     }
 
 }
 
-/* --- 4. SESSÃO MODALIDADES --- */
+/*SESSÃO MODALIDADES*/
 .modalidades {
     background-color: #000;
     padding: 100px 0;
 }
-
-/* ⚠️ AQUI ESTÁ A CORREÇÃO DO SEU PRINT: Desliga o flexbox herdado do topo */
 .modalidades .container {
     display: block; 
     text-align: center; 
 }
-
 .modalidades h2 {
     font-size: 36px;
     color: #fff;
     text-transform: uppercase;
     margin-bottom: 10px;
 }
-
 .modalidades p {
     color: #ccc;
     font-size: 18px;
     margin-bottom: 60px;
 }
-
-/* O Grid de Modalidades */
 .modalidades-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
 }
-
-/* O Cartão de Modalidade Atualizado */
 .modalidade-card {
     background-color: #111;
     border: 1px solid #222;
     border-radius: 8px;
-    overflow: hidden; /* MÁGICA: Isso faz a imagem respeitar as bordas arredondadas do cartão */
+    overflow: hidden;
     text-align: center;
     transition: all 0.3s ease;
-    /* Removemos o padding daqui, ele vai para a caixa de texto agora */
 }
-
 .modalidade-card:hover {
     border-color: #d4af37;
     transform: translateY(-5px);
 }
-
-/* A Foto GIGANTE e Profissional */
 .modalidade-card img {
-    width: 100%; /* Ocupa toda a largura do cartão */
-    height: 220px; /* Uma altura imponente */
-    object-fit: cover; /* Cobre o espaço perfeitamente sem distorcer a foto */
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
     display: block;
-    margin: 0; /* Tira as margens que tínhamos no ícone */
-    /* Removemos aquele filter: invert(1) para a foto não ficar com cores zumbis! */
+    margin: 0;
 }
-
-/* O Espaçamento do Texto */
 .modalidade-conteudo {
-    padding: 30px; /* Devolvemos o respiro apenas para a parte do texto */
+    padding: 30px;
 }
-
 .modalidade-conteudo h3 {
     color: #fff;
     font-size: 20px;
     margin-bottom: 15px;
 }
-
 .modalidade-conteudo p {
     color: #999;
     font-size: 15px;
     line-height: 1.6;
 }
-
-/* A caixa do seu botão */
 .cta-modalidades {
     margin-top: 50px;
     text-align: center;
 }
-
-/* Responsividade do Grid */
 @media (max-width: 1024px) {
     .modalidades-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -292,45 +268,36 @@ body {
     background-color: #0a0a0a;
     padding: 100px 0;
 }
-
-/* Desliga o flexbox do topo para o título poder ficar centralizado sozinho na linha */
 .professor .container {
     display: block; 
 }
-
-/* Estilo do título que agora está no topo */
 .professor h2 {
     text-align: center;
     font-size: 40px;
     color: #fff;
-    margin-bottom: 60px; /* Dá um espaço legal antes de começar a foto e o texto */
+    margin-bottom: 60px;
     text-transform: uppercase;
 }
-
-/* O Flexbox que cuida apenas da foto e do texto lado a lado */
 .professor-conteudo {
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 60px;
 }
-
 .professor-img {
     flex: 1;
 }
-
 .professor-img img {
     width: 100%;
     max-width: 500px;
     border-radius: 8px;
     box-shadow: -15px 15px 0px #d4af37;
     display: block;
-    margin: 0 auto; /* Ajuda a centralizar a imagem dentro do espaço dela */
+    margin: 0 auto;
 }
-
 .professor-texto {
     flex: 1;
-    text-align: left; /* Mantém o texto alinhado à esquerda no PC para boa leitura */
+    text-align: left;
 }
 
 .professor-texto p {
@@ -338,8 +305,6 @@ body {
     color: #ccc;
     line-height: 1.8;
 }
-
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 900px) {
     .professor-conteudo {
         flex-direction: column;
@@ -347,25 +312,21 @@ body {
     }
     
     .professor-texto {
-        text-align: center; /* No celular, o texto centralizado fica mais bonito */
+        text-align: center;
     }
     
     .professor-img img {
         box-shadow: 0px 10px 0px #d4af37;
     }
 }
-
 /*SESSÃO DEPOIMENTOS*/
-/* --- 6. SESSÃO DEPOIMENTOS (CARROSSEL) --- */
 .depoimentos {
     background-color: #000;
     padding: 100px 0;
 }
-
 .depoimentos .container {
     display: block;
 }
-
 .depoimentos h2 {
     text-align: center;
     font-size: 36px;
@@ -373,28 +334,22 @@ body {
     margin-bottom: 60px;
     text-transform: uppercase;
 }
-
-/* Estrutura do Carrossel */
 .carousel-wrapper {
     position: relative;
     display: flex;
     align-items: center;
 }
-
-/* A trilha que desliza (Com o respiro para não dar solavanco) */
 .depoimentos-track {
     display: flex;
     overflow-x: hidden;
     scroll-behavior: smooth;
     gap: 30px;
     width: 100%;
-    padding-top: 15px;    /* Espaço para o cartão subir no hover */
-    padding-bottom: 30px; /* Espaço para a sombra projetar embaixo */
+    padding-top: 15px;
+    padding-bottom: 30px;
     padding-left: 2px;
     padding-right: 2px;
 }
-
-/* O Cartão */
 .depoimento-card {
     flex: 0 0 calc((100% - 60px) / 3); 
     background-color: #111;
@@ -403,23 +358,17 @@ body {
     padding: 30px;
     transition: all 0.3s ease;
 }
-
-/* O Hover Estável */
 .depoimento-card:hover {
     transform: translateY(-5px);
     border-color: #d4af37; 
     box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15); 
 }
-
-/* Cabeçalho do Cartão (Foto e Nome) */
 .depoimento-header {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
 }
-
-/* O Avatar Redondinho */
 .avatar {
     width: 50px;
     height: 50px;
@@ -433,26 +382,21 @@ body {
     font-weight: bold;
     border: 1px solid #333;
 }
-
 .info h4 {
     color: #fff;
     font-size: 18px;
     margin-bottom: 5px;
 }
-
 .estrelas {
     font-size: 14px;
     letter-spacing: 2px;
 }
-
 .depoimento-card p {
     color: #ccc;
     font-size: 16px;
     line-height: 1.6;
     font-style: italic;
 }
-
-/* Botões Dourados do Carrossel */
 .carousel-btn {
     background-color: #d4af37;
     color: #000;
@@ -469,22 +413,16 @@ body {
     align-items: center;
     justify-content: center;
 }
-
 .carousel-btn:hover {
     background-color: #fff;
 }
-
-/* Posicionamento dos botões */
 .carousel-btn.prev { left: -20px; }
 .carousel-btn.next { right: -20px; }
-
-/* RESPONSIVIDADE DO CARROSSEL */
 @media (max-width: 1024px) {
     .depoimento-card {
         flex: 0 0 calc((100% - 30px) / 2);
     }
 }
-
 @media (max-width: 768px) {
     .depoimento-card {
         flex: 0 0 100%;
@@ -492,16 +430,14 @@ body {
     .carousel-btn.prev { left: 0px; }
     .carousel-btn.next { right: 0px; }
 }
-/* --- 7. SESSÃO LOCALIZAÇÃO --- */
+/*SESSÃO LOCALIZAÇÃO*/
 .localizacao {
-    background-color: #0a0a0a; /* Fundo grafite bem escuro */
+    background-color: #0a0a0a;
     padding: 100px 0;
 }
-
 .localizacao .container {
     display: block;
 }
-
 .localizacao h2 {
     text-align: center;
     font-size: 36px;
@@ -509,69 +445,79 @@ body {
     margin-bottom: 60px;
     text-transform: uppercase;
 }
-
-/* O Flexbox para o lado a lado */
 .localizacao-conteudo {
     display: flex;
-    align-items: center; /* Centraliza verticalmente o texto com o mapa */
+    align-items: center;
     justify-content: space-between;
     gap: 50px;
 }
-
-/* Coluna da Esquerda (Textos) */
 .localizacao-info {
-    flex: 1; /* Ocupa 50% */
+    flex: 1;
 }
-
 .localizacao-info h3 {
-    color: #d4af37; /* Dourado Premium */
+    color: #d4af37;
     font-size: 28px;
     margin-bottom: 20px;
 }
-
 .localizacao-info p {
     color: #ccc;
     font-size: 18px;
-    margin-bottom: 40px; /* Espaço antes do botão */
+    margin-bottom: 40px;
     line-height: 1.6;
 }
-
-/* Coluna da Direita (Mapa) */
 .localizacao-mapa {
-    flex: 1; /* Ocupa os outros 50% */
-    /* Uma leve sombra no mapa para ele descolar do fundo */
+    flex: 1;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8); 
     border-radius: 8px;
 }
-
-/* --- 8. RODAPÉ (FOOTER) --- */
+/*RODAPÉ*/
 .rodape {
-    background-color: #000; /* Preto absoluto para fechar o site */
+    background-color: #000;
     padding: 30px 0;
     text-align: center;
-    border-top: 1px solid #222; /* Uma linha sutil separando a localização do rodapé */
+    border-top: 1px solid #222;
 }
-
 .rodape .container {
     display: block;
 }
-
-
 .rodape p {
-    color: #666; /* Um cinza mais escuro para não chamar muita atenção */
+    color: #666;
     font-size: 14px;
 }
 
-
-
-/* --- RESPONSIVIDADE (Celulares e Tablets) --- */
 @media (max-width: 900px) {
     .localizacao-conteudo {
-        flex-direction: column; /* Empilha texto em cima e mapa embaixo */
+        flex-direction: column;
         text-align: center;
     }
     
     .localizacao-mapa {
-        width: 100%; /* Garante que o mapa ocupe a tela toda no celular */
+        width: 100%;
+    }
+}
+
+/*CELULAR*/
+@media (max-width: 768px) {
+    
+    header .container {
+        display: flex;
+        justify-content: center;
+        padding: 15px 0;
+    }
+    
+    header nav {
+        display: none;
+    }
+    
+    .logo img {
+        width: 180px;
+        margin: 0; 
+    }
+
+    .cta-modalidades .btn-gold {
+        display: block; 
+        width: 90%; 
+        margin: 0 auto; 
+        box-sizing: border-box; 
     }
 }
