@@ -299,32 +299,86 @@ body {
 }
 
 
+/* --- SECTION DIVIDERS (abstract lines) --- */
+/* Divider between equipe sections - adapts bg to surrounding sections */
+.section-divider {
+    width: 100%;
+    height: 120px;
+    position: relative;
+    overflow: hidden;
+}
+.section-divider svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* Gradient backgrounds matching surrounding sections */
+.transicao + .section-divider {
+    background: linear-gradient(to bottom, #0d0d0d, #080808);
+}
+.equipe + .section-divider {
+    background: linear-gradient(to bottom, #080808, #050505);
+}
+.modalidades + .section-divider {
+    background: linear-gradient(to bottom, #050505, #0a0a0a);
+}
+.professor + .section-divider {
+    background: linear-gradient(to bottom, #0a0a0a, #050505);
+}
+
+/* --- SECTION TITLE DECORATOR --- */
+.equipe h2,
+.modalidades h2,
+.professor h2,
+.depoimentos h2,
+.localizacao h2 {
+    position: relative;
+    padding-bottom: 20px;
+}
+.equipe h2::after,
+.modalidades h2::after,
+.professor h2::after,
+.depoimentos h2::after,
+.localizacao h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #d4af37, transparent);
+}
+
 /* --- SESSÃO DE TRANSIÇÃO --- */
 .transicao {
     background-color: #0d0d0d;
-    padding: 60px 0;
+    padding: 80px 0;
     text-align: center;
-    border-bottom: 2px solid rgba(212, 175, 55, 0.2);
 }
 .transicao .container {
     display: block;
 }
 .transicao h3 {
     color: #fff;
-    font-size: 24px;
-    margin-bottom: 15px;
+    font-size: 26px;
+    margin-bottom: 20px;
+    font-weight: 700;
 }
 .transicao p {
-    color: #ccc;
+    color: #bbb;
     font-size: 16px;
-    line-height: 1.6;
-    max-width: 900px;
+    line-height: 1.8;
+    max-width: 800px;
     margin: 0 auto;
 }
 
 /* --- SESSÃO EQUIPE --- */
 .equipe {
-    background-color: #0a0a0a;
+    background-color: #080808;
     padding: 100px 0;
     text-align: center;
 }
@@ -344,28 +398,32 @@ body {
 }
 .card {
     background-color: #111;
-    border: 1px solid #222;
+    border: 1px solid #1a1a1a;
     border-radius: 8px;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+}
+.card .card-img-wrapper {
+    position: relative;
+    overflow: hidden;
 }
 .card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease;
 }
 .card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 .card-content {
     padding: 30px;
 }
 .card:hover {
-    transform: translateY(-10px);
-    border-color: #d4af37;
-    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+    transform: translateY(-8px);
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(212, 175, 55, 0.08);
 }
 .card h3 {
     color: #d4af37;
@@ -374,9 +432,9 @@ body {
     margin-top: 20px;
 }
 .card p {
-    color: #ccc;
-    font-size: 16px;
-    line-height: 1.6;
+    color: #aaa;
+    font-size: 15px;
+    line-height: 1.7;
 }
 @media (max-width: 768px) {
     .beneficios-grid {
@@ -386,7 +444,7 @@ body {
 
 /* --- SESSÃO MODALIDADES --- */
 .modalidades {
-    background-color: #000;
+    background-color: #050505;
     padding: 100px 0;
 }
 .modalidades .container {
@@ -400,7 +458,7 @@ body {
     margin-bottom: 10px;
 }
 .modalidades > .container > p {
-    color: #ccc;
+    color: #bbb;
     font-size: 18px;
     margin-bottom: 60px;
 }
@@ -410,17 +468,18 @@ body {
     gap: 30px;
 }
 .modalidade-card {
-    background-color: #111;
-    border: 1px solid #222;
+    background-color: #0e0e0e;
+    border: 1px solid #1a1a1a;
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    position: relative;
 }
 .modalidade-card:hover {
-    border-color: #d4af37;
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.1);
+    border-color: rgba(212, 175, 55, 0.4);
+    transform: translateY(-6px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(212, 175, 55, 0.08);
 }
 .modalidade-card img {
     width: 100%;
@@ -428,10 +487,10 @@ body {
     object-fit: cover;
     display: block;
     margin: 0;
-    transition: transform 0.5s ease;
+    transition: transform 0.6s ease, filter 0.4s ease;
 }
 .modalidade-card:hover img {
-    transform: scale(1.05);
+    transform: scale(1.08);
 }
 .modalidade-conteudo {
     padding: 30px;
@@ -440,11 +499,15 @@ body {
     color: #fff;
     font-size: 20px;
     margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+.modalidade-card:hover .modalidade-conteudo h3 {
+    color: #d4af37;
 }
 .modalidade-conteudo p {
     color: #999;
     font-size: 15px;
-    line-height: 1.6;
+    line-height: 1.7;
 }
 .cta-modalidades {
     margin-top: 50px;
@@ -464,7 +527,7 @@ body {
 /* --- SESSÃO PROFESSOR --- */
 .professor {
     background-color: #0a0a0a;
-    padding: 100px 0;
+    padding: 120px 0;
 }
 .professor .container {
     display: block;
@@ -499,9 +562,11 @@ body {
 }
 .professor-texto p {
     font-size: 18px;
-    color: #ccc;
-    line-height: 1.8;
-    margin-bottom: 30px;
+    color: #bbb;
+    line-height: 1.9;
+    margin-bottom: 35px;
+    border-left: 3px solid rgba(212, 175, 55, 0.3);
+    padding-left: 20px;
 }
 .professor-credenciais {
     display: flex;
@@ -512,13 +577,18 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: rgba(212, 175, 55, 0.1);
-    border: 1px solid rgba(212, 175, 55, 0.3);
+    background-color: rgba(212, 175, 55, 0.06);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 50px;
-    padding: 10px 20px;
+    padding: 12px 24px;
     font-size: 14px;
     font-weight: 600;
     color: #d4af37;
+    transition: all 0.3s ease;
+}
+.credencial:hover {
+    background-color: rgba(212, 175, 55, 0.12);
+    border-color: rgba(212, 175, 55, 0.4);
 }
 @media (max-width: 900px) {
     .professor-conteudo {
@@ -538,7 +608,7 @@ body {
 
 /* --- SESSÃO DEPOIMENTOS --- */
 .depoimentos {
-    background-color: #000;
+    background-color: #050505;
     padding: 100px 0;
 }
 .depoimentos .container {
@@ -569,16 +639,27 @@ body {
 }
 .depoimento-card {
     flex: 0 0 calc((100% - 60px) / 3);
-    background-color: #111;
-    border: 1px solid #222;
+    background-color: #0e0e0e;
+    border: 1px solid #1a1a1a;
     border-radius: 8px;
-    padding: 30px;
-    transition: all 0.3s ease;
+    padding: 35px;
+    transition: all 0.4s ease;
+    position: relative;
+}
+.depoimento-card::before {
+    content: '\201C';
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 60px;
+    color: rgba(212, 175, 55, 0.08);
+    font-family: Georgia, serif;
+    line-height: 1;
 }
 .depoimento-card:hover {
     transform: translateY(-5px);
-    border-color: #d4af37;
-    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5), 0 5px 15px rgba(212, 175, 55, 0.06);
 }
 .depoimento-header {
     display: flex;
@@ -605,8 +686,9 @@ body {
     margin-bottom: 5px;
 }
 .estrelas {
-    font-size: 14px;
-    letter-spacing: 2px;
+    font-size: 16px;
+    letter-spacing: 3px;
+    color: #d4af37;
 }
 .depoimento-card p {
     color: #ccc;
@@ -688,6 +770,7 @@ body {
     flex: 1;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
     border-radius: 8px;
+    border: 1px solid rgba(212, 175, 55, 0.1);
 }
 
 /* --- RODAPÉ --- */
@@ -736,9 +819,9 @@ body {
 .reveal-children > *:nth-child(1) { transition-delay: 0s; }
 .reveal-children > *:nth-child(2) { transition-delay: 0.1s; }
 .reveal-children > *:nth-child(3) { transition-delay: 0.2s; }
-.reveal-children > *:nth-child(4) { transition-delay: 0.15s; }
-.reveal-children > *:nth-child(5) { transition-delay: 0.2s; }
-.reveal-children > *:nth-child(6) { transition-delay: 0.25s; }
+.reveal-children > *:nth-child(4) { transition-delay: 0.3s; }
+.reveal-children > *:nth-child(5) { transition-delay: 0.4s; }
+.reveal-children > *:nth-child(6) { transition-delay: 0.5s; }
 
 /* Scroll margin for anchor links */
 section[id] {
